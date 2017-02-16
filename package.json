@@ -1,0 +1,47 @@
+{
+  "name": "message-hub-nodejs-console-sample",
+  "version": "3.0.0",
+  "description": "Nodejs sample that uses node-rdkafka to interact with MessageHub",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibm-messaging/message-hub-samples"
+  },
+  "scripts": {
+    "start": "node ./app3.js"
+  },
+  "author": "IBM",
+  "license": "Apache-2.0",
+  "maintainers": [
+    {
+      "name": "nagin",
+      "email": "nagin@il.ibm.com"
+    }
+  ],
+   "keywords": [
+    "ibm",
+    "message",
+    "hub",
+    "messagehub",
+    "kafka",
+    "apache",
+    "bluemix",
+    "cloud",
+    "node-rdkafka"
+  ],
+  "dependencies": {
+    "message-hub-rest": "^1.2.0",
+    "node-rdkafka-prebuilt": "file:./node_modules/node-rdkafka-prebuilt",
+	"express": "4.13.x",
+	"cfenv": "1.0.x",
+	"body-parser": "1.16.x",
+	"jade": "1.11.x",
+	"socket.io": "1.7.x",
+	"http": "x.x.x"
+  },
+  "devDependencies": {
+    "node-rdkafka": "0.6.3"
+  },
+  "engines": {
+    "node": "6.9"
+  }
+}

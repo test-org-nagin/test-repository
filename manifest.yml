@@ -1,0 +1,13 @@
+applications:
+- name: SDM-KPI-Event-Simulator
+  domain: eu-gb.mybluemix.net
+  host: SDM-KPI-Event-Simulator
+  buildpack: sdk-for-nodejs
+  instances: 1
+  memory: 256M
+  disk_quota: 512M
+  path: .
+  no-route: false
+  health-check-type: none
+  services:
+    - "Message Hub-ss"
