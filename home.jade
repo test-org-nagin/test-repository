@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title Learning WebSockets with Socket.io
+  body
+    h1 Message Board
+    ul#messages
+    input(type='button', value='Submit', onclick='something()')
+  script(src='/socket.io/socket.io.js')
+  script.
+    console.log("entered");
+    var socket = io.connect('http://localhost:3000');
+
+    socket.on('news', function (data) {
+      var li = document.createElement('li')
+        , text = document.createTextNode('News: ' + data.msg + ' (' + data.count + ')' )
+
+      li.appendChild(text)
+      document.getElementById('messages').appendChild(li)
+    })
+
+    socket.on('private', function (data) {
+      var li = document.createElement('li')
+        , text = document.createTextNode(data.msg)
+
+      li.appendChild(text)
+      document.getElementById('messages').appendChild(li)
+
+//      socket.emit('private', {msg: 'Thank you for your message'})
+    })
+	
+    var something = function() {
+      socket.emit('private', {msg: 'Thank you for your message'})
+      console.log('something')
+    }
+//    something()
